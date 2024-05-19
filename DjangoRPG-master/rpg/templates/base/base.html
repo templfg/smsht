@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% load django_bootstrap5 %}
+    {% load static %}
+
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ pagename }}</title>
+
+        {% bootstrap_css %}
+        {% block extra_css %} {% endblock %}
+    </head>
+
+
+    <body class="d-flex flex-column min-vh-100">
+        <header>
+            {% include 'base/header.html' %}
+        </header>
+            {% bootstrap_messages %}
+            {% block content %} {% endblock %}
+        <footer class="footer bg-dark mt-auto">
+                <div class="container text-right">
+                    <div class="text-white cyberfont">&copy; KriptYashka, 2024</div>
+                </div>
+        </footer>
+
+        {% block extra_js %}
+        {% endblock %}
+    </body>
+</html>
